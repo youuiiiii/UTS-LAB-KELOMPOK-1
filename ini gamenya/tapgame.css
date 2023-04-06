@@ -1,0 +1,100 @@
+body {
+    background-color: rgb(129, 216, 235);
+    height: 100vh;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
+    font-family: Arial, sans-serif;
+    margin: 0;
+}
+
+#tapGame{
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 20px;
+    justify-items: center;
+    align-items: center;
+    padding: 20px;
+}
+
+#money {
+    text-align: center;
+    font-size: 50px;
+    transition: color 0.3s ease-in-out;
+}
+
+#money:hover {
+    color: #ff5e5e;
+}
+
+#money img {
+    margin-bottom: 5px;
+    height: 50px;
+}
+
+
+#mid {
+    justify-content: space-around;
+    display: flex;
+}
+
+#machines button{
+    background-color: transparent;
+    border: none;
+}
+
+#machines img {
+    width: 100%;
+    height: auto;
+    transition: transform 0.3s ease-in-out;
+  }
+  #machines button:hover img {
+    transform: scale(1.1);
+  }
+
+  #item {
+    justify-content: space-evenly;
+    display: grid;
+    margin: 20px;
+    justify-items: center;
+  }
+
+  #item button:hover img {
+    transform: scale(1.1);
+  }
+
+#item img {
+    height: 100px;
+    width: auto;
+    transition: transform 0.3s ease-in-out;
+}
+
+#upgrade button {
+    margin: 10px;
+background-color: #007bff;
+color: #fff;
+border: none;
+padding: 5px 10px;
+border-radius: 5px;
+cursor: pointer;
+transition: transform 0.3s ease-in-out;
+}
+
+#upgrade button:hover {
+    transform: scale(1.1);
+}
+
+#upgrade {
+    justify-content: center;
+    align-items: center;
+    margin-top: 20px;
+}
+
+#buymachines, #autoitem, #autoclick {
+  display: flex;
+  align-items: center;
+}
+#buymachines, #autoitem, #autoclick {
+    display: flex;
+    align-items: center;
+}
+
