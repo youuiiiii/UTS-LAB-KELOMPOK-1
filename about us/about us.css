@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+/* @media screen and (max-width: 60px) {
     header {
       flex-direction: column;
       text-align: center;
@@ -12,7 +12,7 @@
       margin-right: 0;
       margin-bottom: 10px;
     }
-  }
+  } */
   
 header {
     background-color: #3b5998 ;
@@ -23,7 +23,7 @@ header {
     justify-content: space-between;
 }
   
-nav ul {
+/* nav ul {
     list-style: none;
     display: flex;
     margin: 0;
@@ -44,7 +44,7 @@ nav a {
   
 nav a.underline {
     text-decoration: underline;
-}
+} */
 
 body{
     background-color: rgba(193, 222, 235, 0.993);
@@ -76,27 +76,33 @@ body{
   }
 
 .testimonial img{
-    width: 150px;
-    height: 150px;
-    border-radius: 30px;
+    width: 80px;
+    height: 80px;
+    border-radius: 20px;
 }
 .w-100{
     width: 100%;
 }
 
+.referensi {
+    background-color: rgba(193, 222, 235, 0.503);
+}
+
+.kotak img{
+    width: 30px;
+    height: 30px;
+    border-radius: 10px;
+    margin-left: 10px;
+}
+
+
 @media screen and (max-width: 1000px) {
-    .testimonials{
+    .testimonials, .testimonial {
       display: block;
       width: 100%;
     }
-    .testimonial {
-        display: block;
-        width: 100%;
-        margin-bottom: 20px;
-      }
-    .testimonial img{
-        margin-top: 1%;
+    .testimonial img {
+        margin-top: 10px;
     }
-
   }
   

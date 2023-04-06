@@ -109,14 +109,22 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #mid {
         flex-direction: column;
       }
     }
   
     #machines img {
-        width: 80%;
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
+    }
+    
+    #machines{
+      text-align: center;
     }
   
     #item {
