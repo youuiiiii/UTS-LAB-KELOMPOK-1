@@ -7,10 +7,16 @@ body {
     font-family: Arial, sans-serif;
     margin: 0;
 }
+@media only screen and (max-width: 767px) {
+    #vendingMachine {
+      width: 250px;
+    }
+
+  }
 
 #tapGame{
+    margin: 0;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 20px;
     justify-items: center;
     align-items: center;
     padding: 20px;
@@ -20,6 +26,7 @@ body {
     text-align: center;
     font-size: 50px;
     transition: color 0.3s ease-in-out;
+    justify-content: space-between;
 }
 
 #money:hover {
@@ -28,15 +35,17 @@ body {
 
 #money img {
     margin-bottom: 5px;
-    height: 50px;
+    height: 100px;
 }
 
 
 #mid {
-    justify-content: space-around;
+    justify-content: space-between;
     display: flex;
 }
-
+#machines {
+    position: relative;
+  }
 #machines button{
     background-color: transparent;
     border: none;
@@ -54,10 +63,11 @@ body {
   #item {
     justify-content: space-evenly;
     display: grid;
-    margin: 20px;
     justify-items: center;
   }
 
+
+  
   #item button:hover img {
     transform: scale(1.1);
   }
@@ -69,14 +79,14 @@ body {
 }
 
 #upgrade button {
-    margin: 10px;
-background-color: #007bff;
-color: #fff;
-border: none;
-padding: 5px 10px;
-border-radius: 5px;
-cursor: pointer;
-transition: transform 0.3s ease-in-out;
+    margin-bottom: 10px;
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: transform 0.3s ease-in-out;
 }
 
 #upgrade button:hover {

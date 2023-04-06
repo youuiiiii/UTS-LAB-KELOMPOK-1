@@ -1,115 +1,90 @@
-const moraDisplay = document.getElementById('mora');
-const drinkButton = document.getElementById("drink");
-const snackButton = document.getElementById("snack");
-const toyButton = document.getElementById("toy");
-const machinesButton = document.getElementById("buymachines");
-const autoitemButton = document.getElementById("autoitem");
-const autoclickButton = document.getElementById("autoclick");
-const machine = document.querySelector('#machines button');
- let mora = 0;
-let drink = 10;
-let snack = 10;
-let toy = 10;
-let machines = 1;
-let machinePrice = 1000;
-let autoitemPrice = 500;
-let autoclickPrice = 200;
+let mora = 0;
+let moraIncrement = 2;
+let itemSold = 1;
 
- drinkButton.addEventListener('click', function () {
+function addMora() {
+  if (document.getElementById("totaldrink").textContent > 0 || document.getElementById("totalsnack").textContent > 0 || document.getElementById("totaltoy").textContent > 0) {
+    var items = ["drink", "snack", "toy"];
+    var randomItem = items[Math.floor(Math.random() * items.length)];
+    var totalItem = document.getElementById("total" + randomItem);
+
+    if (totalItem.textContent > 0 ) {
+      sisaItem = totalItem.textContent % moraIncrement;
+      pasPas = totalItem.textContent - sisaItem;
+      if(totalItem.textContent < itemSold){
+        addMora();
+      }else{
+        totalItem.textContent -= itemSold ;
+        mora += moraIncrement;
+      }
+      document.getElementById("mora").textContent = mora;
+    } else {
+      addMora();
+    }
+  }
+}
+
+function buyItem(item) {
   if (mora >= 1) {
-    mora -= 1;
-    drink += 1;
-    updateDisplay();
+    mora--;
+    document.getElementById("mora").textContent = mora;
+    var totalItem = parseInt(document.getElementById("total" + item).textContent);
+    totalItem++;
+    document.getElementById("total" + item).textContent = totalItem;
+  } else {
+    alert("-1 mora");
   }
-});
+}
 
- snackButton.addEventListener('click', function () {
-  if (mora >= 2) {
-    mora -= 2;
-    snack += 1;
-    updateDisplay();
-  }
-});
 
- toyButton.addEventListener('click', function () {
-  if (mora >= 3) {
-    mora -= 3;
-    toy += 1;
-    updateDisplay();
-  }
-});
-
- machinesButton.addEventListener('click', function () {
-  if (mora >= machinePrice) {
-    mora -= machinePrice;
-    machines += 1;
-    machinePrice *= 1.2;
-    updateDisplay();
-  }
-});
-
- autoitemButton.addEventListener('click', function () {
-  if (mora >= autoitemPrice) {
-    mora -= autoitemPrice;
-    setInterval(() => {
-      if (mora >= 1) {
-        mora -= 1;
-        drink += 1;
-      }
-      if (mora >= 2) {
-        mora -= 2;
-        snack += 1;
-      }
-      if (mora >= 3) {
-        mora -= 3;
-        toy += 1;
-      }
-      updateDisplay();
-    }, 1000);
-    autoitemPrice *= 1.5;
-    updateDisplay();
-  }
-});
-
- autoclickButton.addEventListener('click', function () {
+var autoclickPrice = 200;
+document.getElementById("autoclick").addEventListener("click", function() {
   if (mora >= autoclickPrice) {
     mora -= autoclickPrice;
-    setInterval(() => {
-      collectFromMachine();
-      updateDisplay();
+    document.getElementById("mora").textContent = mora;
+
+    setInterval(function() {
+      addMora();
+      document.getElementById("mora").textContent = mora;
+      document.getElementById("autoclickprice").textContent = autoclickPrice;
     }, 1000);
-    autoclickPrice *= 1.5;
-    updateDisplay();
+  } else {
+    alert("moranya abis");
   }
 });
 
- machine.addEventListener('click', function () {
-  collectFromMachine();
-  updateDisplay();
+var autoItemPrice = 50;
+
+document.getElementById("autoitem").addEventListener("click", function(){
+  if (mora >= autoItemPrice){
+    mora -= autoItemPrice;
+    document.getElementById("mora").textContent = mora;
+
+    setInterval(addAutoItem, 1000);
+  }
 });
 
- function collectFromMachine() {
-  if (drink > 0) {
-    drink -= 1;
-    mora += 2 * machines;
-  }
-  if (snack > 0) {
-    snack -= 1;
-    mora += 4 * machines;
-  }
-  if (toy > 0) {
-    toy -= 1;
-    mora += 6 * machines;
+function addAutoItem() {
+  var items = ["drink", "snack", "toy"];
+  for (var i = 0; i < 1; i++) {
+    var randomItem = items[Math.floor(Math.random() * items.length)];
+    var totalItem = parseInt(document.getElementById("total" + randomItem).textContent);
+    totalItem++;
+    document.getElementById("total" + randomItem).textContent = totalItem;
   }
 }
 
- function updateDisplay() {
-  moraDisplay.textContent = mora;
-  document.getElementById('totaldrink').textContent = drink;
-  document.getElementById('totalsnack').textContent = snack;
-  document.getElementById('totaltoy').textContent = toy;
-  document.getElementById('machinesprice').textContent = Math.floor(machinePrice);
-  document.getElementById('autoitemprice').textContent = Math.floor(autoitemPrice);
-  document.getElementById('autoclickprice').textContent = Math.floor(autoclickPrice);
-}
- updateDisplay();
+var buyMachinePrice = 500;
+
+document.getElementById("buymachines").addEventListener("click", function(){
+  if(mora >= buyMachinePrice){
+    mora -= buyMachinePrice;
+    document.getElementById("mora").textContent = mora;
+
+    moraIncrement+=1;
+    itemSold+=1;
+  }else{
+    alert("kamu miskin")
+  }
+});
+
