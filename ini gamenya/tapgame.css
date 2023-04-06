@@ -122,6 +122,10 @@ body {
       margin: 0 auto;
       display: block;
     }
+    
+    #machines{
+      text-align: center;
+    }
   
     #item {
       display: flex;
