@@ -109,7 +109,7 @@ body {
 }
 
 
-@media only screen and (max-width: 600px) {
+@media only screen and (max-width: 800px) {
     #mid {
         flex-direction: column;
       }
@@ -117,6 +117,7 @@ body {
   
     #machines img {
         width: 80%;
+        align-items: center;
     }
   
     #item {

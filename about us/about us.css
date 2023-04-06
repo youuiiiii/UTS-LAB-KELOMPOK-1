@@ -1,4 +1,4 @@
-@media screen and (max-width: 600px) {
+@media screen and (max-width: 60px) {
     header {
       flex-direction: column;
       text-align: center;
@@ -78,7 +78,7 @@ body{
 .testimonial img{
     width: 80px;
     height: 80px;
-    border-radius: 50px;
+    border-radius: 20px;
 }
 .w-100{
     width: 100%;
@@ -94,3 +94,15 @@ body{
     border-radius: 10px;
     margin-left: 10px;
 }
+
+
+@media screen and (max-width: 1000px) {
+    .testimonials, .testimonial {
+      display: block;
+      width: 100%;
+    }
+    .testimonial img {
+        margin-top: 10px;
+    }
+  }
+  
