@@ -12,3 +12,5 @@ tombol auto buy: untuk membeli auto buy yang akan memberi kita +1 item secara gr
 tombol auto click: untuk menekan vending machine dan mendapatkan mora setiap 1 detik
 item: kita dapat membeli item secara manual. namun, ada cost sebesar 1 mora
 
+link:
+https://github.com/youuiiiii/UTS-LAB-KELOMPOK-1.git
