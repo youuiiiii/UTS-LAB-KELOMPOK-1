@@ -11,10 +11,10 @@ let upgradeValue = 2;
 
 // Elements
 const moneyElement = document.getElementById("money");
-const tahuElement = document.getElementById("machines");
-const autoClickersElement = document.getElementById("autoclick");
-const buyClickerElement = document.getElementById("buy-clicker");
-const bukaCabangElement = document.getElementById("buymachines");
+const tahuElement = document.getElementById("machines").querySelector("button");
+const autoClickersElement = document.getElementById("autoclick").querySelector("button");
+const buyClickerElement = document.getElementById("autoitem").querySelector("button");
+const bukaCabangElement = document.getElementById("buymachines").querySelector("button");
 const upgradeElement = document.getElementById("drink");
 const upgradeElement1 = document.getElementById("snack");
 const upgradeElement2 = document.getElementById("toy");
@@ -35,7 +35,7 @@ buyClickerElement.addEventListener("click", () => {
   money -= autoClickerValue;
   autoClickers++;
   moneyElement.innerText = money;
-  autoClickersElement.innerText = autoClickers;
+  autoClickersElement.innerText = "Auto Clickers: " + autoClickers;
 
   setInterval(() => {
     money += autoClickers;
@@ -52,16 +52,9 @@ bukaCabangElement.addEventListener("click", () => {
 
   money -= 500;
   cabangOpened = true;
-  clickValue += cabangValue;
+  cabangValue *= 2;
   moneyElement.innerText = money;
-
-  // Update click value for auto-clickers
-  autoClickerValue += cabangValue;
-  
-  // Update click value for upgrade
-  upgradeValue += cabangValue;
 });
-
 
 // Upgrading Click Value
 upgradeElement.addEventListener("click", () => {
