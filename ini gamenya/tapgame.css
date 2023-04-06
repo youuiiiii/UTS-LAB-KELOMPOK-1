@@ -116,8 +116,11 @@ body {
     }
   
     #machines img {
-        width: 80%;
-        align-items: center;
+      width: 80%;
+      max-width: 300px;
+      height: auto;
+      margin: 0 auto;
+      display: block;
     }
   
     #item {
