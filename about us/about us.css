@@ -1,0 +1,30 @@
+.text-center{
+    text-align: center;
+}
+
+.testimonials {
+    display: flex;
+    justify-content: space-between;
+    padding-bottom: 10px;
+}
+  
+.testimonial {
+    width: 45%;
+    height: 300px;
+    text-align: center;
+    background-color: gray;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    border-radius: 20px;
+    margin: auto;
+  }
+
+.testimonial img{
+    width: 80px;
+    height: 80px;
+    border-radius: 50px;
+}
+.w-100{
+    width: 100%;
+}
