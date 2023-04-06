@@ -76,21 +76,27 @@ body{
   }
 
 .testimonial img{
-    width: 80px;
-    height: 80px;
-    border-radius: 50px;
+    width: 150px;
+    height: 150px;
+    border-radius: 30px;
 }
 .w-100{
     width: 100%;
 }
 
-.referensi {
-    background-color: rgba(193, 222, 235, 0.503);
-}
+@media screen and (max-width: 1000px) {
+    .testimonials{
+      display: block;
+      width: 100%;
+    }
+    .testimonial {
+        display: block;
+        width: 100%;
+        margin-bottom: 20px;
+      }
+    .testimonial img{
+        margin-top: 1%;
+    }
 
-.kotak img{
-    width: 30px;
-    height: 30px;
-    border-radius: 10px;
-    margin-left: 10px;
-}
+  }
+  

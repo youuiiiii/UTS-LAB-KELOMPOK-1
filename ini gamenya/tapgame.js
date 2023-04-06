@@ -1,3 +1,4 @@
+
 let mora = 0;
 let moraIncrement = 2;
 let itemSold = 1;
